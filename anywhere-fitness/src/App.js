@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Nav from './Components/Header/Nav';
 
 import InstructorDash from './Components/Instructor/InstructorDashboard';
 import ClientDashboard from './Components/Client/ClientDashboard';
@@ -7,7 +8,7 @@ import ClientDashboard from './Components/Client/ClientDashboard';
 function App() {
   return (
     <div className="App">
-      <header>Anywhere Fitness</header>
+      <Nav />
 
       <Switch>
         <Route path='/dashboard' >
