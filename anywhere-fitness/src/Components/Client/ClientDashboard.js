@@ -1,12 +1,15 @@
 import React from 'react';
-import SearchField from 'react-search-field';
+import SearchBar from './SearchBar';
+import ClassList from './ClassList';
 
 const ClientDashboard = () => {
+
     return (
-        <div className='search-field'>
-            <SearchField
-                placeholder='Search'
-            />
+        <div>
+            <nav>
+                <SearchBar  />
+            </nav>
+            <ClassList />
         </div>
     )
 }

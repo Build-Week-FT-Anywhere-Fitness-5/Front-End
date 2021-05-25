@@ -1,0 +1,10 @@
+[
+    {"id":1,"name":"Subin","startTime":"7:08 AM","duration":"3:35 PM","intensityLevel":1,"Location":"Agua Fría","currentlyRegistered":1,"maxClassSize":1},
+    {"id":2,"name":"Kanlam","startTime":"8:33 AM","duration":"6:26 PM","intensityLevel":2,"Location":"Jatisari","currentlyRegistered":2,"maxClassSize":2},
+    {"id":3,"name":"Asoka","startTime":"7:59 PM","duration":"5:56 AM","intensityLevel":3,"Location":"Huangban","currentlyRegistered":3,"maxClassSize":3},
+    {"id":4,"name":"Otcom","startTime":"12:35 PM","duration":"5:30 PM","intensityLevel":4,"Location":"Shuangxiqiao","currentlyRegistered":4,"maxClassSize":4},
+    {"id":5,"name":"Biodex","startTime":"10:04 AM","duration":"8:54 PM","intensityLevel":5,"Location":"Sumalig","currentlyRegistered":5,"maxClassSize":5},
+    {"id":6,"name":"Zaam-Dox","startTime":"8:13 AM","duration":"7:39 PM","intensityLevel":6,"Location":"Lazaro Cardenas","currentlyRegistered":6,"maxClassSize":6},
+    {"id":7,"name":"Domainer","startTime":"10:20 AM","duration":"12:30 PM","intensityLevel":7,"Location":"Changfu","currentlyRegistered":7,"maxClassSize":7},
+    {"id":8,"name":"Prodder","startTime":"11:37 PM","duration":"8:59 PM","intensityLevel":8,"Location":"Mannheim","currentlyRegistered":8,"maxClassSize":8}
+]
