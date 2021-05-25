@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Nav from './Components/Header/Nav';
 import LoginModal from './Components/Login/LoginModal';
@@ -14,10 +14,12 @@ function App() {
     setLoginModalOpen(!loginModalOpen);
   }
 
+  useEffect(()=>console.log(document.location))
+
   return (
     <div className="App">
-      <Nav openLogin={handleLoginModal}/>
-      {loginModalOpen && <LoginModal />}
+      <Nav openLogin={handleLoginModal} />
+        {loginModalOpen && <LoginModal />}
       <Switch>
         <Route path='/dashboard' >
           <InstructorDash />
