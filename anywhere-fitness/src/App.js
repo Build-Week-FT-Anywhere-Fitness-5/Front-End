@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Nav from './Components/Header/Nav';
 import LoginModal from './Components/Login/LoginModal';
 import InstructorProfileNav from './Components/Header/InstructorProfileNav';
-
+import SignUpModal from './Components/Login/SignUpModal';
 import InstructorDash from './Components/Instructor/InstructorDashboard';
 import ClientDashboard from './Components/Client/ClientDashboard';
 
@@ -16,6 +16,8 @@ function App() {
     instructorAuthorization: ''
 });
 
+  const [signModalOpen, setSignModalOpen] = useState(false);
+
   const handleLoginModal = e => {
     setLoginModalOpen(!loginModalOpen);
   }
@@ -24,6 +26,7 @@ function App() {
     <div className="App">
       <Nav openLogin={handleLoginModal} loginModalOpen={loginModalOpen} setLoginModalOpen={setLoginModalOpen} />
         {loginModalOpen && <LoginModal loginData={loginData} setLoginData={setLoginData} handleLoginModal={handleLoginModal}/>}
+        {signModalOpen && <SignUpModal />}
       <Switch>
         <Route path='/dashboard' >
           <InstructorProfileNav loginData={loginData}/>
