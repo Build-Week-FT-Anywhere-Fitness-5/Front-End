@@ -1,12 +1,12 @@
 import React from 'react';
-import SearchField from 'react-search-field';
+import Search from '../SearchBar/Search'
+
 
 const ClientDashboard = () => {
+
     return (
         <div className='search-field'>
-            <SearchField
-                placeholder='Search'
-            />
+            <Search />
         </div>
     )
 }
