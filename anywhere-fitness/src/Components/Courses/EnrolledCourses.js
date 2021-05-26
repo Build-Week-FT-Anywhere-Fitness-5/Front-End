@@ -1,8 +1,12 @@
 import React from 'react';
+import Course from './Course';
 
 const EnrolledCourses = () => {
     return(
-        <div>EnrolledCourses</div>
+        <>
+            <div>EnrolledCourses</div>
+            <Course />
+        </>
     )
 }
 
