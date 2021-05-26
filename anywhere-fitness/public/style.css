@@ -1,0 +1,7 @@
+.instructorProfileImg {
+	background-image: url('https://www.academyoffitnessprofessionals.com/wp-content/uploads/2014/08/Personal-Trainer.jpg');
+	background-size: cover;
+	height: 100px;
+	width: 100px;
+	border-radius: 100%;
+}
