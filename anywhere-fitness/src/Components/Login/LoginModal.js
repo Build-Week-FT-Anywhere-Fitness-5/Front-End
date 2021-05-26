@@ -1,19 +1,37 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const LoginModal = () => {
+const LoginModal = props => {
+    const { loginData, setLoginData, handleLoginModal } = props
     {/* Instructor Authorization Handler and State */}
     const [instructorChecked, setInstructorChecked] = useState(false);
+
+    const Background = styled.div`
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    `;
+
+    const ModalForm = styled.form`
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    `;
+
+
     const handleInstructorCheck = e => {
         setInstructorChecked(!instructorChecked);
     }
 
     {/* Form Payload */}
-    const [loginData, setLoginData] = useState({
-        userName: '',
-        password: '',
-        instructorAuthorization: ''
-    });
-
     const handleLoginInput = e => {
         setLoginData({
             ... loginData, [e.target.name]:e.target.value
@@ -22,12 +40,18 @@ const LoginModal = () => {
 
     const handleSubmitLogin = e => {
         e.preventDefault();
+        handleLoginModal(e);
+        setLoginData({
+            userName: '',
+            password: '',
+            instructorAuthorization: ''
+        });
         console.log(loginData);
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmitLogin}>
+        <Background>
+            <ModalForm onSubmit={handleSubmitLogin}>
                 <label>
                     <input type="checkbox" name="" id="" checked={instructorChecked} onChange={e => handleInstructorCheck(e)}/>
                     **Check if you are an instructor
@@ -47,8 +71,9 @@ const LoginModal = () => {
                 </label>}
                 <br />
                 <button type="submit">Submit</button>
-            </form>
-        </div>
+                <button onClick={e => handleLoginModal(e)}>Cancel</button>
+            </ModalForm>
+        </Background>
     )
 }
 
