@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <Nav openLogin={handleLoginModal}/>
-      {loginModalOpen && <LoginModal />}
+      {/* {loginModalOpen && <LoginModal />} */}
       <Switch>
         <Route path='/dashboard' >
           <InstructorDash />

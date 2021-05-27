@@ -19,6 +19,8 @@ const Search = () => {
                 console.log("Error: ", err);
             })
     }, []);
+    
+
 
     const updateInput = async (input) => {
         const filteredClasses = classListDefault.filter(classes => {
@@ -29,12 +31,14 @@ const Search = () => {
     }
 
     return (
-        <div>Search
+        <div className="search-container">
             <SearchBar 
                 input={input}
                 onChange={updateInput}
             />
-            <ClassList classList={classList} />
+            <div className="classes-list">
+                <ClassList classList={classList} />
+            </div>
         </div>
     )
 }

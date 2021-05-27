@@ -1,4 +1,5 @@
 import React from 'react';
+import ClassItem from './ClassItem';
 
 const ClassList = ( { classList=[] } ) => {
     return (
@@ -7,9 +8,14 @@ const ClassList = ( { classList=[] } ) => {
                 if (classes) {
                     return (
                         <div key={classes.Id}>
-                            <h2>{classes.Name}</h2>
-                            <h3>{classes.Location}</h3>
-                            <p>{classes.StartTime}</p>
+                           <ClassItem 
+                               Name={classes.Name} 
+                               Type={classes.Type}
+                               IntensityLevel={classes.IntensityLevel}
+                               Location={classes.Location}
+                               StartTime={classes.StartTime}
+                               Duration={classes.Duration}
+                           />
                         </div>
                     )
                 }
