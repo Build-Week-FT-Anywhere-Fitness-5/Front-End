@@ -49,20 +49,18 @@ function App() {
       <Nav openLogin={handleLoginModal} loginModalOpen={loginModalOpen} setLoginModalOpen={setLoginModalOpen} />
         {loginModalOpen && <LoginModal loginData={loginData} setLoginData={setLoginData} handleLoginModal={handleLoginModal}/>}
         {signModalOpen && <SignUpModal />}
-
-      <NavLink exact to="/item-form">
-            Add Item
-      </NavLink>
+      
 
       <Route
         exact
         path="/"
-        render={props => <ClassesList {...props} myClasses={myClasses} />}
+        render={props => <InstructorDash {...props} myClasses={myClasses} />}
       />
       {/* <Nav openLogin={handleLoginModal}/>
       {loginModalOpen && <LoginModal />} */}
-      <Route path="/item-form" component={AddClassForm} />
+
       <Switch>
+        <Route path="/addClassForm" component={AddClassForm} />
         <Route path="/class-list" component={Card} />
         <Route path='/dashboard' >
           <InstructorProfileNav loginData={loginData}/>
