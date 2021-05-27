@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import SearchBar from './SearchBar';
-import ClassList from '../Classes/ClassList';
+import ClassList from '../Classes/ClassesList';
 
 const Search = () => {
     const [ input, setInput ] = useState('');
