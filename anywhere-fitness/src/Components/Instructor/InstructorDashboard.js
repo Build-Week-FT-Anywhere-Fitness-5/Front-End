@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import ClassesList from '../Classes/ClassesList';
 
 const InstructorDash = () => {
     return (
-        <h1>Welcome back!</h1>
+        <div>
+            <h1>Welcome back!</h1>
+            <ClassesList {...props} myClasses={myClasses}/>
+        </div>
+        
     )
 }
 
