@@ -37,7 +37,7 @@ const InstructorProfileNav = props => {
         <>
             <Section>
                 <div className="instructorProfileImg"></div>
-                <h3>{loginData.userName}</h3>
+                {/* <h3>{loginData.userName}</h3> */}
                 <button onClick={e=> handleOpenOffered(e)}>My Offered Courses</button>
                 <button onClick={e=> handleOpenEnrolled(e)}>My Enrolled Courses</button>
                 <button onClick={e=> handleOpenFull(e)}>Full Course Catalog</button>
