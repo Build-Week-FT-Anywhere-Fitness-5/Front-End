@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 
-const LoginModal = () => {
+const LoginModal = props => {
+    const { loginData, setLoginData, handleLoginModal } = props
     {/* Instructor Authorization Handler and State */}
     const [instructorChecked, setInstructorChecked] = useState(false);
+
+
     const handleInstructorCheck = e => {
         setInstructorChecked(!instructorChecked);
     }
 
     {/* Form Payload */}
-    const [loginData, setLoginData] = useState({
-        userName: '',
-        password: '',
-        instructorAuthorization: ''
-    });
-
     const handleLoginInput = e => {
         setLoginData({
             ... loginData, [e.target.name]:e.target.value
@@ -22,7 +19,22 @@ const LoginModal = () => {
 
     const handleSubmitLogin = e => {
         e.preventDefault();
+        handleLoginModal(e);
+        setLoginData({
+            userName: '',
+            password: '',
+            instructorAuthorization: ''
+        });
         console.log(loginData);
+    }
+
+    const handleCancel = e => {
+        handleLoginModal(e);
+        setLoginData({
+            userName: '',
+            password: '',
+            instructorAuthorization: ''
+        });
     }
 
     return (
@@ -47,6 +59,7 @@ const LoginModal = () => {
                 </label>}
                 <br />
                 <button type="submit">Submit</button>
+                <button onClick={e => handleCancel(e)}>Cancel</button>
             </form>
         </div>
     )

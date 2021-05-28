@@ -6,7 +6,8 @@ import {
 } from '../Actions';
 
 const initialState = {
-    classes: { 
+    classes: [
+        { 
             Id: 8, 
             ClassId: 78, 
             Duration: "", 
@@ -17,12 +18,12 @@ const initialState = {
             Name: "",
             StartTime: "",
             Type: ""
-        },
+        }],
     isFetching: false,
     error: ""
 }
 
-export const reducer = (state = initialState, action ) => {
+const reducer = (state = initialState, action ) => {
     switch(action.type) {
         case FETCH_START:
             return ({
@@ -63,3 +64,5 @@ export const reducer = (state = initialState, action ) => {
             return state;           
     }
 }
+
+export default reducer;

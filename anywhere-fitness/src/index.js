@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -10,9 +9,10 @@ import thunk from 'redux-thunk';
 
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
-import { reducer } from './Reducers';
+import reducer from './Reducers';
+import { composeWithDevTools } from 'redux-devtools-extension'
 
-const store =  createStore(reducer, applyMiddleware(logger, thunk));
+const store =  createStore(reducer, composeWithDevTools(applyMiddleware(logger, thunk)));
 
 ReactDOM.render(
   <Provider store={store}>
@@ -21,7 +21,8 @@ ReactDOM.render(
         <App />
       </React.StrictMode>
     </Router>
-  </Provider>,
+  </Provider>
+  ,
   document.getElementById('root')
 );
 
