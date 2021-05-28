@@ -29,10 +29,6 @@ function App() {
 
   return (
     <div className="App">
-      <NavLink exact to="/item-form">
-            Add Item
-      </NavLink> 
-
       <Switch>
         {/* <Route
           exact
@@ -43,6 +39,12 @@ function App() {
           <Homepage />
         </Route>
         <Route path="/item-form" component={AddClassForm} />
+//       <Route
+//         exact
+//         path="/"
+//         render={props => <InstructorDash {...props} myClasses={myClasses} />}
+//       />
+        <Route path="/addClassForm" component={AddClassForm} />
         <Route path="/class-list" component={Card} />
         <Route path='/dashboard' >
           <InstructorDash />
