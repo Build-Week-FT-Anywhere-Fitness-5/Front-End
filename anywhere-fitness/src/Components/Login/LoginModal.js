@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const LoginModal = props => {
+    const ButtonStyled = styled.button`
+        background-color: #d3d6c8;
+        border: 1px solid #d3d6c8;
+
+        &:hover {
+            background-color: #201f29;
+            border: 1px solid red;
+            letter-spacing: 0.09rem;
+            transition: all 0.3s ease-in-out;
+        }
+    `;
+
     const { loginData, setLoginData, handleLoginModal } = props
     {/* Instructor Authorization Handler and State */}
     const [instructorChecked, setInstructorChecked] = useState(false);
@@ -40,9 +53,9 @@ const LoginModal = props => {
     return (
         <div>
             <form onSubmit={handleSubmitLogin}>
-                <label>
+                <label className="instructor-checkbox">
+                    <span>Are you an instructor?</span>
                     <input type="checkbox" name="" id="" checked={instructorChecked} onChange={e => handleInstructorCheck(e)}/>
-                    **Check if you are an instructor
                 </label><br />
                 <label>
                     User Name
@@ -59,7 +72,7 @@ const LoginModal = props => {
                 </label>}
                 <br />
                 <button type="submit">Submit</button>
-                <button onClick={e => handleCancel(e)}>Cancel</button>
+                <ButtonStyled onClick={e => handleCancel(e)}>Cancel</ButtonStyled>
             </form>
         </div>
     )
