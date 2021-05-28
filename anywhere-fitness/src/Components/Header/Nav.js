@@ -7,20 +7,37 @@ const NavStyle = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 130px;
+    width: 100vw;
     padding: 10px 30px;
-    background-color: #b0234d;
+    background-color: #292734;
+    border-bottom: 8px solid #ff0073;
+    margin-bottom: 20px;
 
-    img {
-        height: 50px;
-        filter: invert(10%);
-        opacity: 0.6;
-        transition: all 0.5s ease-in-out;
+    .logo {
+        transition: all 0.3s ease-in-out;
 
-        &:hover {
-            filter: invert(95%);
+        &: hover {
+            filter: saturate(10%) brightness(95%);
             transition: all 0.3s ease-in-out;
-        }
+        } 
+    }
+
+    .logo div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-family: 'Roboto Condensed'; 
+        font-weight: 700;
+        sans-serif;
+    }
+
+    .logo div span {
+        font-family: 'Roboto', sans-serif;
+	    font-style: italic;
+        font-weight: 300;
+        font-size: 1rem;
+        letter-spacing: 4px;
     }
 `;
 
@@ -37,7 +54,7 @@ const Nav = props => {
 
     return (
         <NavStyle>
-            <Link to="/" onClick={handleHomeRoute}><Logo height="60px" fill="#eaff00"/></Link>
+            <Link to="/" onClick={handleHomeRoute} className="logo"><div><Logo height="60px" fill="#eaff00"/>ANYWHERE <span>FITNESS</span></div></Link>
             {onHomePage && <button onClick={openLogin}>Login/ Sign-UP</button>}
             {onProfilePage && <button>Log Out</button>}
         </NavStyle>

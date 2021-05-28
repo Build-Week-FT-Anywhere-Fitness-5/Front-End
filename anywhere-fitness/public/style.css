@@ -130,12 +130,17 @@ table {
 }
 
 body {
-	background-color: #201f29;
-	color: #d3d6c8;
+	background-image: linear-gradient(#201f29, black);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	color: #f1f3e7;
 	font-weight: 300;
 	font-size: 1.5rem;
 	font-family: 'Noto Serif JP', serif;
 	letter-spacing: 1px;
+	display: flex;
+	justify-content: center;
 }
 
 h1,
@@ -145,6 +150,7 @@ h4,
 h5,
 h6 {
 	font-family: 'Roboto', sans-serif;
+	color: #d3d6c8;
 	font-size: 3rem;
 	line-height: 3.5rem;
 	text-transform: uppercase;
@@ -156,12 +162,12 @@ h1 {
 
 a {
 	text-decoration: none;
-	color: #f20554;
+	color: #eaff00;
 }
 
 button {
 	background-color: #eaff00;
-	border: none;
+	border: 1px solid #eaff00;
 	color: gray;
 	width: 10rem;
 	height: 3rem;
@@ -174,7 +180,8 @@ button {
 }
 
 button:hover {
-	background-color: #f5f7d5;
+	background-color: #201f29;
+	border: 1px solid #d3d6c8;
 	letter-spacing: 0.09rem;
 	transition: all 0.3s ease-in-out;
 }
@@ -184,16 +191,31 @@ form {
 	flex-direction: column;
 	min-height: 500px;
 	padding: 20px;
+	background-color: #201f29;
+	width: 80%;
 }
 
 label {
 	font-family: 'Roboto', sans-serif;
+	color: #d3d6c8;
 }
 
 input {
-	height: 2rem;
+	height: 2.2rem;
 	border: none;
 	margin-left: 10px;
+	padding-left: 10px;
+	width: 60%;
+	font-size: 1.5rem;
+	color: #3b384b;
+}
+
+.instructor-checkbox span {
+	font-family: 'Roboto', sans-serif;
+	font-style: italic;
+	font-size: 1rem;
+	color: #ff0073;
+	margin-right: -310px;
 }
 
 .instructorProfileImg {
