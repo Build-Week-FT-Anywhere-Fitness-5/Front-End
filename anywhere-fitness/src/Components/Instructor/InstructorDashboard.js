@@ -2,8 +2,7 @@ import React from 'react';
 import InstructorProfileNav from '../Header/InstructorProfileNav';
 import Nav from '../Header/Nav';
 
-// import ClassesList from '../Classes/ClassesList';
-import ClassList from '../Classes/ClassList';
+import ClassesList from '../Classes/ClassesList';
 
 const InstructorDash = (props) => {
     const routeToAddClassForm = (e, ClassId) => {
@@ -20,8 +19,7 @@ const InstructorDash = (props) => {
             <button onClick={routeToAddClassForm} className="md-button shop-button">
                 Add New Class
             </button>
-            <ClassList  />
-            {/* <ClassesList {...props} /> */}
+            <ClassesList {...props} />
         </div>
         
     )

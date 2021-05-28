@@ -3,7 +3,6 @@ import { Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 
 import InstructorDash from './Components/Instructor/InstructorDashboard';
-import ClassesList from './Components/Classes/ClassesList';
 import Card from './Components/Classes/Card';
 import AddClassForm from './Components/Instructor/AddClassForm';
 import ClientDashboard from './Components/Client/ClientDashboard';
@@ -30,22 +29,14 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        {/* <Route
-          exact
-          path="/"
-          render={props => <ClassesList {...props} myClasses={myClasses} />}
-        /> */}
-        <Route exact path="/">
-          <Homepage />
-        </Route>
+        <Route exact path="/" component={Homepage} />
         <Route path="/item-form" component={AddClassForm} />
+        <Route path="/addClassForm" component={AddClassForm} />
         <Route path="/class-list" component={Card} />
         <Route path='/dashboard' >
-          <InstructorDash />
+          <InstructorDash myClasses={myClasses} />
         </Route>
-        <Route path='/clienthome'>
-          <ClientDashboard />
-        </Route>
+        <Route path='/clienthome' component={ClientDashboard} />
       </Switch>
     </div>
   );
