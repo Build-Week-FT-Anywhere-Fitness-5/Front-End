@@ -16,7 +16,7 @@ const initialValues = {
 };
 
 const AddClassForm = props => {
-    const [myClass, handleChanges, clearForm] = useForm( initialValues);
+    const [myClass, handleChanges ] = useForm( initialValues);
     const { ClassId } = useParams();
     const { push } = useHistory();
       
@@ -98,7 +98,6 @@ const AddClassForm = props => {
               onChange={handleChanges}
             />
             <div className="flexer">
-              <button onClick={clearForm}>Clear</button>
               <button type="submit">Submit</button>
             </div>
         </form>

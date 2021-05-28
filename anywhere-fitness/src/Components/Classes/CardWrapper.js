@@ -1,10 +1,12 @@
+import Styles from '../../Styles/CardStyles';
+
 const CardWapper = (props) => {
     const classes = ' card ' + props.className;
 
     return (
-        <div className={classes}>
+        <Styles className={classes}>
             {props.children}
-        </div>
+        </Styles>
     )
 }
 

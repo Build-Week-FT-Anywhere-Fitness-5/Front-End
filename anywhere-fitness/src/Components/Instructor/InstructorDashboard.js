@@ -2,14 +2,26 @@ import React from 'react';
 import InstructorProfileNav from '../Header/InstructorProfileNav';
 import Nav from '../Header/Nav';
 
-const InstructorDash = () => {
+// import ClassesList from '../Classes/ClassesList';
+import ClassList from '../Classes/ClassList';
+
+const InstructorDash = (props) => {
+    const routeToAddClassForm = (e, ClassId) => {
+        e.preventDefault();
+        props.history.push(`/addClassForm`);
+    }
     return (
         <div>
-            <nav>
+             <nav>
                 <Nav />
             </nav>
-            <h1>Welcome back!</h1>
+            <h2>Welcome back!</h2>
             <InstructorProfileNav />
+            <button onClick={routeToAddClassForm} className="md-button shop-button">
+                Add New Class
+            </button>
+            <ClassList  />
+            {/* <ClassesList {...props} /> */}
         </div>
         
     )

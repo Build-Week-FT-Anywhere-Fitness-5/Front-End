@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch, NavLink } from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 
 import InstructorDash from './Components/Instructor/InstructorDashboard';
@@ -29,10 +29,6 @@ function App() {
 
   return (
     <div className="App">
-      <NavLink exact to="/item-form">
-            Add Item
-      </NavLink> 
-
       <Switch>
         {/* <Route
           exact

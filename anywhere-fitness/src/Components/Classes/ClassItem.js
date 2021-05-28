@@ -8,8 +8,7 @@ const ClassItem = (props) => {
                 <h2>{props.Type}</h2>
                 <h3>{props.Location}</h3>
                 <h4>{props.IntensityLevel}</h4>
-                <p>{props.StartTime}</p>
-                <p>{props.Duration}</p>
+                <h4>{props.StartTime}</h4>
             </div>
         </CardWapper>
     )
