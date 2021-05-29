@@ -18,14 +18,14 @@ function Card (props) {
   }
 
   const handleUpdateClick = ()=> {
-    props.history.push(`....../update-item/${ClassId}`);
+    props.history.push(`/update-class/${ClassId}`);
   }
 
   const handleDeleteClick = ()=> {
     axios.delete(`https://anywherefitnessclasses.herokuapp.com/api/classes/ClassId/${ClassId}`)
       .then(res=> {
         props.setMyClass(res.data);
-        props.history.push('....../item-list');
+        props.history.push('/classes-list');
       })
       .catch(err=>{
         console.log(err);
