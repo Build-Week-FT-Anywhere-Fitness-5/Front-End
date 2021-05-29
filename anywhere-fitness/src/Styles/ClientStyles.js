@@ -1,12 +1,23 @@
 import styled from 'styled-components';
 
-const Styles = styled.div `
-    height: 100vh;
-    width: 100%;
+const Styled = styled.div `
+    height: 100%;
+
+    .client-container {
+        width: 100%;
+        height: 100vh;
+    }
 
     nav {
         border-bottom: 2px solid lightgrey;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .classess {
+        height: 100vh;
     }
 `
 
-export default Styles; 
+export default Styled; 

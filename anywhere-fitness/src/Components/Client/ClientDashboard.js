@@ -32,8 +32,7 @@ const ClientDashboard = () => {
     return (
         <Styled className='client-container'>
             <nav>
-                <h2>AnywhereFitness</h2> 
-                <h3>Welcome back!</h3>
+                <h6>AnywhereFitness</h6>
                 <SearchBar 
                 input={input}
                 onChange={updateInput}
@@ -42,7 +41,9 @@ const ClientDashboard = () => {
                     <button>logout</button>
                 </div>
             </nav>
-            <ClassList classList={classList} />
+            <div className="classes">
+                <ClassList classList={classList} />
+            </div>    
         </Styled>
     )
 }
