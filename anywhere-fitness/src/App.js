@@ -33,9 +33,10 @@ function App() {
         <Route path="/item-form" component={AddClassForm} />
         <Route path="/addClassForm" component={AddClassForm} />
         <Route path="/class-list" component={Card} />
-        <Route path='/dashboard' >
-          <InstructorDash myClasses={myClasses} />
-        </Route>
+        <Route path='/dashboard' 
+          render={props => 
+          <InstructorDash {...props} myClasses={myClasses} />}
+        />
         <Route path='/clienthome' component={ClientDashboard} />
       </Switch>
     </div>

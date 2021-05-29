@@ -1,8 +1,10 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 
 //import { axiosWithAuth } from '../Utils/axiosWithAuth';
 
 function ClassesList(props) {
+
     function handleClick(e, myClass) {
       e.preventDefault();
       props.history.push(`/class-list/${myClass.ClassId}`);
