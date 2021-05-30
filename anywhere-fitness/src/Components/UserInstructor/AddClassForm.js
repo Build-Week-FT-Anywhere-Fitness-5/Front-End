@@ -16,7 +16,7 @@ const initialValues = {
 };
 
 const AddClassForm = props => {
-    const [myClass, handleChanges ] = useForm( initialValues);
+    const [myClass, handleChanges ] = useForm(initialValues);
     const { ClassId } = useParams();
     const { push } = useHistory();
       
@@ -97,10 +97,11 @@ const AddClassForm = props => {
               value={myClass.maxclass}
               onChange={handleChanges}
             />
-            <div className="flexer">
-              <button type="submit">Submit</button>
+            <div className="form-btn">
+              <button type="submit-btn">Submit</button>
             </div>
         </form>
+        <button className='cancel-btn'>Cancel</button>
       </div>
     );
   }

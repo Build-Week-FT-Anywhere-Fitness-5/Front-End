@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import ClassList from '../Classes/ClassList';
-import SearchBar from '../SearchBar/SearchBar';
+import UserHeader from '../Header/UserHeader'
+import ClassesList from '../UserToolClasses/ClassesList';
+import SearchBar from '../UserToolSearchBar/SearchBar';
+import Search from '../UserToolSearchBar/Search';
+
 import Styled from '../../Styles/ClientStyles';
 
-const ClientDashboard = () => {
+const ClientDashboard = (props) => {
     const [ input, setInput ] = useState('');
     const [ classListDefault, setClassListDefault ] = useState(); 
     const [ classList, setClassList ] = useState([]);
@@ -31,18 +34,14 @@ const ClientDashboard = () => {
   
     return (
         <Styled className='client-container'>
-            <nav>
-                <h6>AnywhereFitness</h6>
-                <SearchBar 
+            <UserHeader />
+            <SearchBar 
                 input={input}
                 onChange={updateInput}
             />
-                <div className="logout">
-                    <button>logout</button>
-                </div>
-            </nav>
+
             <div className="classes">
-                <ClassList classList={classList} />
+                <ClassesList {...props} />
             </div>    
         </Styled>
     )

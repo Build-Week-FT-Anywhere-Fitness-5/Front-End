@@ -1,8 +1,7 @@
 import React from 'react';
-import InstructorProfileNav from '../Header/InstructorProfileNav';
-import Nav from '../Header/Nav';
 
-import ClassesList from '../Classes/ClassesList';
+import UserHeader from '../Header/UserHeader';
+import ClassesList from '../UserToolClasses/ClassesList';
 
 const InstructorDash = (props) => {
     const routeToAddClassForm = (e, ClassId) => {
@@ -11,17 +10,12 @@ const InstructorDash = (props) => {
     }
     return (
         <div>
-             <nav>
-                <Nav />
-            </nav>
-            <h2>Welcome back!</h2>
-            <InstructorProfileNav />
+            <UserHeader />
             <button onClick={routeToAddClassForm} className="md-button shop-button">
                 Add New Class
             </button>
             <ClassesList {...props} />
         </div>
-        
     )
 }
 

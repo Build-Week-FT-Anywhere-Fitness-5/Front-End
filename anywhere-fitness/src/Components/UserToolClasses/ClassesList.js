@@ -1,10 +1,8 @@
 import React from 'react';
-import { useHistory } from 'react-router';
 
 //import { axiosWithAuth } from '../Utils/axiosWithAuth';
 
 function ClassesList(props) {
-
     function handleClick(e, myClass) {
       e.preventDefault();
       props.history.push(`/class-list/${myClass.ClassId}`);
@@ -20,9 +18,9 @@ function ClassesList(props) {
                     key={myClass.ClassId}
                 >
                     <div className='card-text'>
-                            <h2>{myClass.Name}</h2>
-                            <h3>{myClass.Location}</h3>
-                            <p>{myClass.StartTime}</p>
+                            <h3>{myClass.Name}</h3>
+                            <h4>{myClass.Location}</h4>
+                            <h4>{myClass.StartTime}</h4>
                     </div>
                 </div>
             ))}

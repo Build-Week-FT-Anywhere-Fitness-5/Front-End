@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 
-import InstructorDash from './Components/Instructor/InstructorDashboard';
-import Card from './Components/Classes/Card';
-import AddClassForm from './Components/Instructor/AddClassForm';
-import ClientDashboard from './Components/Client/ClientDashboard';
-import Homepage from './Components/Homepage/Homepage'
+import LoggedOutNav from './Components/Header/LoggedOutNav';
+import LoginForm from './Components/Header/LoginSignup/LoginForm';
+import SignupForm from './Components/Header/LoginSignup/SignupForm';
+
+
+import InstructorDash from './Components/UserInstructor/InstructorDashboard';
+import Card from './Components/UserToolClasses/Card';
+import ClassesList from './Components/UserToolClasses/ClassesList';
+import AddClassForm from './Components/UserInstructor/AddClassForm';
+
+
+import ClientDash from './Components/UserClient/ClientDash';
+
 
 
 function App() {
@@ -28,17 +36,56 @@ function App() {
 
   return (
     <div className="App">
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route path="/item-form" component={AddClassForm} />
-        <Route path="/addClassForm" component={AddClassForm} />
-        <Route path="/class-list" component={Card} />
-        <Route path='/dashboard' 
-          render={props => 
-          <InstructorDash {...props} myClasses={myClasses} />}
-        />
-        <Route path='/clienthome' component={ClientDashboard} />
-      </Switch>
+      <Router>
+
+        <Switch>
+          
+          <Route
+              exact
+              path="/"
+              render={props => <LoggedOutNav {...props} myClasses={myClasses} />}
+          />
+
+          <Route
+            exact
+            path="/Login"
+            render={props => <LoginForm {...props} myClasses={myClasses} />}
+          />
+          <Route
+            exact
+            path="/Signup"
+            render={props => <SignupForm {...props} myClasses={myClasses} />}
+          />
+            <Route
+              exact
+              path="/InstructorDash"
+              render={props => <InstructorDash {...props} myClasses={myClasses} />}
+            />
+              <Route path="/addClassForm" component={AddClassForm} />
+              <Route path="/class-list" component={Card} />
+                {//Route To UpdateForm
+                }
+
+
+            <Route
+              exact
+              path="/ClientDash"
+              render={props => <ClientDash {...props} myClasses={myClasses} />}
+            />
+
+          <Route path="/class-list" component={Card} />
+
+          {/* <Route exact path="/" component={Homepage} />
+          <Route path="/item-form" component={AddClassForm} />
+          <Route path="/addClassForm" component={AddClassForm} />
+          <Route path="/class-list" component={Card} />
+          <Route path='/dashboard' >
+            <InstructorDash myClasses={myClasses} />
+          </Route>
+          <Route path='/clienthome' component={ClientDashboard} /> */}
+          
+        </Switch>
+      </Router>
     </div>
   );
 }
