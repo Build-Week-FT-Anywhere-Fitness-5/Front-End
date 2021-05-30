@@ -39,7 +39,7 @@ const UpdateForm = props => {
         axios.put(`https://anywherefitnessclasses.herokuapp.com/api/classes/ClassId/${ClassId}`, myClass)
             .then(res=>{
                 props.setMyClass(res.data);
-                push(`/item-list/${ClassId}`);
+                push(`/class-list/${ClassId}`);
         })
             .catch(err=>{
                 console.log(err);

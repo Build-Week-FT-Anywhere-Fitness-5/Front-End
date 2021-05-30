@@ -25,7 +25,7 @@ function Card (props) {
     axios.delete(`https://anywherefitnessclasses.herokuapp.com/api/classes/ClassId/${ClassId}`)
       .then(res=> {
         props.setMyClass(res.data);
-        props.history.push('/classes-list');
+        props.history.push('/class-list');
       })
       .catch(err=>{
         console.log(err);

@@ -1,29 +1,43 @@
-import React from 'react'
+import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 import useForm from '../../../Hooks/useForm';
 
 const initialValues = {
-    Role: '',
-    Username: '',
-    Password: '',
+    newUser: {
+        Role: '',
+        Username: '',
+        Password: '',
+    }
 }
 
 export default function SignupForm(props) {
 
-  const [myNewCredentials, handleChanges ] = useForm(initialValues);
+    const [myNewCredentials, handleChanges ] = useForm(initialValues);
 
-  const onSubmit = event => {
-        event.preventDefault()
-        console.log();
-        props.history.push(`/InstructorDash`);
-  }
+    const onSubmit = event => {
+        event.preventDefault();
+        axios.post(`https://anywherefitnessclasses.herokuapp.com/api/register`, myNewCredentials.newUser.Username, myNewCredentials.newUser.Password, myNewCredentials.newUser.Role,
+                    {headers: 
+                        {Authorization: 'token'}
+                    })
+            .then((res) => {
+                handleChanges(initialValues);
+                localStorage.setItem('token');
+                myNewCredentials.newUser.role === 'Instructor' ? props.history.push('/InstructorDashOnboarding') : props.history.push('/ClientDashOnboarding')
+
+            })
+            .catch((err) => {
+                handleChanges(initialValues);
+            });
+    }
 
   return (
         <div className='login-form'>
             <form className='login-form-section' onSubmit={onSubmit}>
                 <label>Role:
-                    <select value={myNewCredentials.role} name='role' onChange={handleChanges} placeholder='--select--'>
+                    <select value={myNewCredentials.newUser.Role} name='role' onChange={handleChanges} placeholder='--select--'>
                         <option value=''>--Select Position--</option>
                         <option value='Instructor'>Instructor</option>
                         <option value='Client'>Client</option>
@@ -34,7 +48,7 @@ export default function SignupForm(props) {
                     <input
                         text=''
                         onChange={handleChanges}
-                        value={myNewCredentials.username}
+                        value={myNewCredentials.newUser.Username}
                         name='username'
                         maxLength='20'
                     />
@@ -44,13 +58,13 @@ export default function SignupForm(props) {
                     <input
                         text=''
                         onChange={handleChanges}
-                        value={myNewCredentials.password}
+                        value={myNewCredentials.newUser.Password}
                         name='password'
                     />
                 </label>
 
                 <div className='loginSubmit'>
-                    <button disabled={!myNewCredentials.username || !myNewCredentials.password || !myNewCredentials.role}>Submit</button>
+                    <button disabled={!myNewCredentials.newUser.Username || !myNewCredentials.newUser.Password || !myNewCredentials.newUser.Role}>Submit</button>
                 </div>
             </form>
         </div>

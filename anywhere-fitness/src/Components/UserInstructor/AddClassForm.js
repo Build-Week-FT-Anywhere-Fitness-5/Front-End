@@ -26,7 +26,7 @@ const AddClassForm = props => {
       axios.post(`https://anywherefitnessclasses.herokuapp.com/api/classes/ClassId/${ClassId}`, myClass)
         .then(res=>{
           props.setItems(res.data);
-          push(`/class-list/${ClassId}`);
+          props.history.push(`/class-list/${ClassId}`);
           alert(`Class Added!`);
       })
       .catch(err=>{

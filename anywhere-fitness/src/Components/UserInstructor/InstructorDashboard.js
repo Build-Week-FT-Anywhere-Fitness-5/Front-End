@@ -4,7 +4,7 @@ import UserHeader from '../Header/UserHeader';
 import ClassesList from '../UserToolClasses/ClassesList';
 
 const InstructorDash = (props) => {
-    const routeToAddClassForm = (e, ClassId) => {
+    const routeToAddClassForm = e => {
         e.preventDefault();
         props.history.push(`/addClassForm`);
     }
