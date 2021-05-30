@@ -25,7 +25,7 @@ export default function SignupForm(props) {
             .then((res) => {
                 handleChanges(initialValues);
                 localStorage.setItem('token', res.data.token );
-                myNewCredentials.newUser.role === 'Instructor' ? props.history.push('/InstructorDashOnboarding') : props.history.push('/ClientDashOnboarding')
+                myNewCredentials.newUser.Role === 'Instructor' ? props.history.push('/InstructorDashOnboarding') : props.history.push('/ClientDashOnboarding')
 
             })
             .catch((err) => {
@@ -37,7 +37,7 @@ export default function SignupForm(props) {
         <div className='login-form'>
             <form className='login-form-section' onSubmit={onSubmit}>
                 <label>Role:
-                    <select value={myNewCredentials.newUser.Role} name='role' onChange={handleChanges} placeholder='--select--'>
+                    <select value={myNewCredentials.Role} name='role' onChange={handleChanges} placeholder='--select--'>
                         <option value=''>--Select Position--</option>
                         <option value='Instructor'>Instructor</option>
                         <option value='Client'>Client</option>
@@ -48,7 +48,7 @@ export default function SignupForm(props) {
                     <input
                         text=''
                         onChange={handleChanges}
-                        value={myNewCredentials.newUser.Username}
+                        value={myNewCredentials.Username}
                         name='username'
                         maxLength='20'
                     />
@@ -58,13 +58,13 @@ export default function SignupForm(props) {
                     <input
                         text=''
                         onChange={handleChanges}
-                        value={myNewCredentials.newUser.Password}
+                        value={myNewCredentials.Password}
                         name='password'
                     />
                 </label>
 
                 <div className='loginSubmit'>
-                    <button disabled={!myNewCredentials.newUser.Username || !myNewCredentials.newUser.Password || !myNewCredentials.newUser.Role}>Submit</button>
+                    <button disabled={!myNewCredentials.Username || !myNewCredentials.Password || !myNewCredentials.Role}>Submit</button>
                 </div>
             </form>
         </div>
