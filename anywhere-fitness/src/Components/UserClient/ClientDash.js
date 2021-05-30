@@ -4,9 +4,6 @@ import axios from 'axios';
 import UserHeader from '../Header/UserHeader'
 import ClassesList from '../UserToolClasses/ClassesList';
 import SearchBar from '../UserToolSearchBar/SearchBar';
-import Search from '../UserToolSearchBar/Search';
-
-import Styled from '../../Styles/ClientStyles';
 
 const ClientDashboard = (props) => {
     const [ input, setInput ] = useState('');
@@ -33,7 +30,7 @@ const ClientDashboard = (props) => {
     }
   
     return (
-        <Styled className='client-container'>
+        <div className='client-container'>
             <UserHeader />
             <SearchBar 
                 input={input}
@@ -41,9 +38,9 @@ const ClientDashboard = (props) => {
             />
 
             <div className="classes">
-                <ClassesList {...props} />
+                <ClassesList {...props} myClasses={classList} />
             </div>    
-        </Styled>
+        </div>
     )
 }
 

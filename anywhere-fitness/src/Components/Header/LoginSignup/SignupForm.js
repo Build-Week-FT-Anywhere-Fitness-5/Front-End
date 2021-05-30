@@ -29,6 +29,7 @@ export default function SignupForm(props) {
 
             })
             .catch((err) => {
+                console.log("Error: ", err)
                 handleChanges(initialValues);
             });
     }

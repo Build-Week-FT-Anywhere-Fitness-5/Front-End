@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 
 import LoggedOutNav from './Components/Header/LoggedOutNav';
 import LoginForm from './Components/Header/LoginSignup/LoginForm';
 import SignupForm from './Components/Header/LoginSignup/SignupForm';
-
-
 import InstructorDash from './Components/UserInstructor/InstructorDashboard';
 import Card from './Components/UserToolClasses/Card';
-import ClassesList from './Components/UserToolClasses/ClassesList';
 import AddClassForm from './Components/UserInstructor/AddClassForm';
-
-
 import ClientDash from './Components/UserClient/ClientDash';
-
-
+import OnBoarding from './Components/OnBoarding/OnBoarding';
+import { OnboardingData } from './Components/OnBoarding/OnBoardingData';
 
 function App() {
   //State For ClassesList Props:
@@ -36,10 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-
         <Switch>
-          
           <Route
               exact
               path="/"
@@ -66,7 +58,6 @@ function App() {
                 {//Route To UpdateForm
                 }
 
-
             <Route
               exact
               path="/ClientDash"
@@ -75,17 +66,11 @@ function App() {
 
           <Route path="/class-list" component={Card} />
 
-          {/* <Route exact path="/" component={Homepage} />
-          <Route path="/item-form" component={AddClassForm} />
-          <Route path="/addClassForm" component={AddClassForm} />
-          <Route path="/class-list" component={Card} />
-          <Route path='/dashboard' >
-            <InstructorDash myClasses={myClasses} />
+          <Route path='/onboarding'> 
+            <OnBoarding slides={OnboardingData} /> 
           </Route>
-          <Route path='/clienthome' component={ClientDashboard} /> */}
-          
+
         </Switch>
-      </Router>
     </div>
   );
 }

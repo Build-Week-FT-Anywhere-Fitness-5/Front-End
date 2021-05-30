@@ -1,4 +1,4 @@
-html,
+/* html,
 body,
 div,
 span,
@@ -125,7 +125,7 @@ table {
 }
 /* End Reset ------------------------------------------------------*/
 
-* {
+/* * {
 	box-sizing: border-box;
 }
 
@@ -224,4 +224,4 @@ input {
 	height: 100px;
 	width: 100px;
 	border-radius: 100%;
-}
+} */
