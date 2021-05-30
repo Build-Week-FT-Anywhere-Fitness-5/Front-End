@@ -17,13 +17,11 @@ export default function LoginForm(props) {
 
     const onSubmit = event => {
         event.preventDefault();
-        axios.post(`https://anywherefitnessclasses.herokuapp.com/api/login`, myCredentials.Username, myCredentials.Password,
-                    {headers: 
-                        {Authorization: 'token'}
-                    })
+        axios.post(`https://anywherefitnessclasses.herokuapp.com/api/login`, myCredentials.Username, myCredentials.Password,)
             .then((res) => {
+                alert('Successfully Posted Login!');
                 handleChanges(initialValues);
-                localStorage.setItem('token');
+                localStorage.setItem('token', res.data.token);
                 myCredentials.role === 'Instructor' ? props.history.push('/InstructorDash') : props.history.push('/ClientDash')
 
             })

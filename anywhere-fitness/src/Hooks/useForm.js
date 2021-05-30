@@ -4,7 +4,6 @@ const useForm = (initialValues)=> {
     const [values, setValues] = useLocalStorage("form", initialValues);
   
     const handleChanges = e => {
-      e.persist();
       setValues({
         ...values,
         [e.target.name]:e.target.value
